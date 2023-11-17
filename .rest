@@ -80,7 +80,7 @@ Content-Type: application/json
 
 ### Delete book
 
-DELETE http://localhost:3000/books/6557a0e3fe38f2a6d5f4e377 HTTP/1.1
+DELETE http://localhost:3000/books/6557977e4288072eea016315 HTTP/1.1
 
 
 

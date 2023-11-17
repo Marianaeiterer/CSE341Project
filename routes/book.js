@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const bookController = require("../controllers/book");
+const bookController = require('../controllers/books');
 const validation = require('../middleware/validate'); 
 
 //get all books

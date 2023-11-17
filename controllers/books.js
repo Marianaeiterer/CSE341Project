@@ -4,15 +4,15 @@ const ObjectId = require('mongodb').ObjectId;
 //get all books
 const getAllBooks = async (req, res) => {
   //#swagger.tags=['Books']
-  const result = await mongodb
-    .getDatabase()
-    .db() 
-    .collection('books') 
-    .find(); 
-  result.toArray().then((lists) => {
-    res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(lists);
-  });
+  try {
+    const result = await mongodb.getDatabase().db().collection('books').find();
+    result.toArray().then((lists) => {
+      res.setHeader('Content-Type', 'application/json');
+      res.status(200).json(lists);
+    });
+  } catch (err) {
+    res.status(400).json({ message: err });
+  }
 };
 
 //get one book by id
@@ -21,17 +21,22 @@ const getSingleBook = async (req, res) => {
   //validation of the id
   if (!ObjectId.isValid(req.params.id)) {
     res.status(400).json('Must use a valid client id to find a client.');
+  } else {
+    try {
+      const bookId = new ObjectId(req.params.id);
+      const result = await mongodb
+        .getDatabase()
+        .db()
+        .collection('books')
+        .find({ _id: bookId });
+      result.toArray().then((lists) => {
+        res.setHeader('Content-Type', 'application/json');
+        res.status(200).json(lists[0]);
+      });
+    } catch (err) {
+      res.status(400).json({ message: err });
+    }
   }
-  const bookId = new ObjectId(req.params.id);
-  const result = await mongodb
-    .getDatabase()
-    .db()
-    .collection('books')
-    .find({ _id: bookId });
-  result.toArray().then((lists) => {
-    res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(lists[0]);
-  });
 };
 
 const createBook = async (req, res) => {
