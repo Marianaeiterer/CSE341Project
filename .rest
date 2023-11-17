@@ -1,42 +1,86 @@
 //Localhost 
 
-### Get all contacts
+### Get all clients
 
-GET http://localhost:8080/clients HTTP/1.1
+GET http://localhost:3000/clients HTTP/1.1
 
-### Get one contact by id
+### Get one client by id
 
-GET http://localhost:8080/clients/65578fe54288072eea01630a HTTP/1.1
+GET http://localhost:3000/clients/65578fe54288072eea01630a HTTP/1.1
 
-### Create contact
+### Create client
 
-POST http://localhost:3000/contacts HTTP/1.1
+POST http://localhost:3000/clients HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Zaya",
+    "lastName": "Overbay",
+    "birthday": "09/10/1997",
+    "phone": "234-345-3939",
+    "email": "zaya@gmail.com"
+}
+
+### Update client
+
+PUT http://localhost:3000/clients/65578fe54288072eea01630a HTTP/1.1
 Content-Type: application/json
 
 {
     "firstName": "Mariana",
     "lastName": "Overbay",
-    "email": "marioverbay@gmail.com",
-    "favoriteColor": "Blue",
-    "birthday": "05/24/1995"
+    "birthday": "05/24/1995",
+    "phone": "888-909-2389",
+    "email": "mari@gmail.com"
 }
 
-### Update contact
+### Delete client
 
-PUT http://localhost:3000/contacts/654fc2ec5972c9e808a121ad HTTP/1.1
+DELETE http://localhost:3000/clients/65579f0d95f57f9da7bc0895 HTTP/1.1
+
+###          BOOKS
+
+### Get all books
+
+GET http://localhost:3000/books HTTP/1.1
+
+### Get one book by id
+
+GET http://localhost:3000/books/6557977e4288072eea016311 HTTP/1.1
+
+### Create book
+
+POST http://localhost:3000/books HTTP/1.1
 Content-Type: application/json
 
 {
-    "firstName": "Bruna",
-    "lastName": "Souza",
-    "email": "brunasouza@gmail.com",
-    "favoriteColor": "Pink",
-    "birthday": "07/28/1998"
+    "title": "The Top Five Regrets of the Dying",
+    "author": "Bronnie Ware",
+    "publishedYear": "2011",
+    "numberPages": "320",
+    "language": "English",
+    "genre": "Self-help",
+    "available": "Yes"
 }
 
-### Delete contact
+### Update book
 
-DELETE http://localhost:3000/contacts/654d5130efd5398a172ab65e HTTP/1.1
+PUT http://localhost:3000/books/6557977e4288072eea016311 HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "publishedYear": "1813",
+    "numberPages": "432",
+    "language": "English",
+    "genre": "Romance",
+    "available": "No"
+}
+
+### Delete book
+
+DELETE http://localhost:3000/books/6557a0e3fe38f2a6d5f4e377 HTTP/1.1
 
 
 
