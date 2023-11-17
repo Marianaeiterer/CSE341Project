@@ -1,0 +1,52 @@
+[   
+    {
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "publishedYear": "01/28/1813",
+        "numberPages": "432",
+        "language": "English",
+        "genre": "Romance",
+        "available": "Yes"
+
+    },
+    {
+        "title": "The Power of Habit",
+        "author": "Charles Duhigg",
+        "publishedYear": "2012",
+        "numberPages": "416",
+        "language": "English",
+        "genre": "Self-help",
+        "available": "No"
+
+    },
+    {
+        "title": "Percy Jackson & the Olympians - The Lighthing Thief",
+        "author": "Rick Riordan",
+        "publishedYear": "2005",
+        "numberPages": "416",
+        "language": "Portuguese",
+        "genre": "Fantasy",
+        "available": "Yes"
+
+    },
+    {
+        "title": "Percy Jackson and the Olympians - The Sea of Monsters",
+        "author": "Rick Riordan",
+        "publishedYear": "2006",
+        "numberPages": "320",
+        "language": "English",
+        "genre": "Fantasy",
+        "available": "No"
+
+    },
+    {
+        "title": "Percy Jackson and the Olympians - The Titan's Curse",
+        "author": "Rick Riordan",
+        "publishedYear": "2007",
+        "numberPages": "352",
+        "language": "English",
+        "genre": "Fantasy",
+        "available": "No"
+
+    }
+]

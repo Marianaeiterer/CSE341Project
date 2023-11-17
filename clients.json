@@ -1,0 +1,38 @@
+[
+    {
+        "firstName": "Mariana",
+        "lastName": "Overbay",
+        "birthday": "05/24/1995",
+        "phone": "234-345-3939",
+        "email": "mari@gmail.com"
+    },
+    {
+        "firstName": "Anderson",
+        "lastName": "Souza",
+        "birthday": "08/12/1968",
+        "phone": "234-222-8238",
+        "email": "anderson@gmail.com"
+    },
+    {
+        "firstName": "Tanner",
+        "lastName": "Overbay",
+        "birthday": "09/05/1995",
+        "phone": "501-111-3939",
+        "email": "tanner@gmail.com"
+    },
+    {
+        "firstName": "Bruna",
+        "lastName": "Souza",
+        "birthday": "08/28/1998",
+        "phone": "306-345-1111",
+        "email": "bruna@gmail.com"
+    },
+    {
+        "firstName": "Gabriela",
+        "lastName": "Souza",
+        "birthday": "08/08/2002",
+        "phone": "234-345-5555",
+        "email": "gabi@gmail.com"
+    }
+
+]
