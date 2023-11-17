@@ -3,16 +3,17 @@ const ObjectId = require('mongodb').ObjectId;
 
 //get all clients
 const getAllClients = async (req, res) => {
+  //#swagger.tags=['Clients']
   const result = await mongodb
     .getDatabase()
     .db() 
-    .collection('clients')
-    .find();
+    .collection('clients') 
+    .find(); 
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists);
   });
-  };
+};
 
 //get one client by id
 const getSingleClient = async (req, res) => {
@@ -22,18 +23,14 @@ const getSingleClient = async (req, res) => {
     res.status(400).json('Must use a valid client id to find a client.');
   }
   const clientId = new ObjectId(req.params.id);
-  mongodb
+  const result = await mongodb
     .getDatabase()
     .db()
     .collection('clients')
-    .find({ _id: clientId })
-    .toArray((err, result) => {
-        if (err) {
-          //added this as error handling
-          res.status(400).json({ message: err });
-        }
+    .find({ _id: clientId });
+  result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(result[0]);
+    res.status(200).json(lists[0]);
   });
 };
 
@@ -55,9 +52,7 @@ const createClient = async (req, res) => {
   if (response.acknowledged > 0) {
     res.status(204).send();
   } else {
-    res
-      .status(500)
-      .json(response.error || 'Some error occurred while creating the client.');
+    res.status(500).json(response.error || 'Some error occurred while creating the client.');
   }
 };
 
@@ -83,9 +78,7 @@ const updateClient = async (req, res) => {
   if (response.modifiedCount > 0) {
     res.status(204).send();
   } else {
-    res
-      .status(500)
-      .json(response.error || 'Some error occurred while updating the client.');
+    res.status(500).json(response.error || 'Some error occurred while updating the client.');
   }
 };
 

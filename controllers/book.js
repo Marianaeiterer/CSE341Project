@@ -6,14 +6,10 @@ const getAllBooks = async (req, res) => {
   //#swagger.tags=['Books']
   const result = await mongodb
     .getDatabase()
-    .db()
-    .collection('books') //collection in database
-    .find();
-  result.toArray((err, lists) => {
-    if (err) {
-      //error handling
-      res.status(400).json({ message: err });
-    }
+    .db() 
+    .collection('books') 
+    .find(); 
+  result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists);
   });
@@ -24,7 +20,7 @@ const getSingleBook = async (req, res) => {
   //#swagger.tags=['Books']
   //validation of the id
   if (!ObjectId.isValid(req.params.id)) {
-    res.status(400).json('Must use a valid book id to find a book.');
+    res.status(400).json('Must use a valid client id to find a client.');
   }
   const bookId = new ObjectId(req.params.id);
   const result = await mongodb
@@ -32,13 +28,9 @@ const getSingleBook = async (req, res) => {
     .db()
     .collection('books')
     .find({ _id: bookId });
-  result.toArray((err, result) => {
-    if (err) {
-      //added this as error handling
-      res.status(400).json({ message: err });
-    }
+  result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(result[0]);
+    res.status(200).json(lists[0]);
   });
 };
 

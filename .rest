@@ -6,7 +6,7 @@ GET http://localhost:8080/clients HTTP/1.1
 
 ### Get one contact by id
 
-GET http://localhost:8080/clients/65568d2de59cf27c000d57fc HTTP/1.1
+GET http://localhost:8080/clients/65578fe54288072eea01630a HTTP/1.1
 
 ### Create contact
 
