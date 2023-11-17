@@ -1,11 +1,11 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Contacts API",
-    "description": "Contacts API",
+    "title": "Library API",
+    "description": "Library API",
     "version": "1.0.0"
   },
-  "host": "https://libraryproject-1ccy.onrender.com",
+  "host": "libraryproject-1ccy.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
