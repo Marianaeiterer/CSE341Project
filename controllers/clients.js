@@ -27,7 +27,7 @@ const getSingleClient = async (req, res) => {
       const result = await mongodb
         .getDatabase()
         .db()
-        .collection('books')
+        .collection('clients')
         .find({ _id: clientId });
       result.toArray().then((lists) => {
         res.setHeader('Content-Type', 'application/json');

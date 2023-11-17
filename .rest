@@ -6,7 +6,7 @@ GET http://localhost:3000/clients HTTP/1.1
 
 ### Get one client by id
 
-GET http://localhost:3000/clients/65578fe54288072eea01630a HTTP/1.1
+GET http://localhost:3000/clients/65578fe54288072eea01630e HTTP/1.1
 
 ### Create client
 
@@ -86,18 +86,18 @@ DELETE http://localhost:3000/books/6557977e4288072eea016315 HTTP/1.1
 
 // Production - test in render 
 
-### Get all contacts
+### Get all clients
 
-GET https://cs341contactsproject.onrender.com/contacts
+GET https://libraryproject-1ccy.onrender.com/clients
 
 ### Get one contact by id
 
-GET https://cs341contactsproject.onrender.com/contacts/654fc2ec5972c9e808a121ac
+GET https://libraryproject-1ccy.onrender.com/clients/65578fe54288072eea01630e
 
 
 ### Create contact
 
-POST https://cs341contactsproject.onrender.com/contacts/
+POST https://libraryproject-1ccy.onrender.com/contacts/
 Content-Type: application/json
 
 {
@@ -110,7 +110,7 @@ Content-Type: application/json
 
 ### Update contact
 
-PUT https://cs341contactsproject.onrender.com/contacts/654fc2ec5972c9e808a121ad
+PUT https://libraryproject-1ccy.onrender.com/contacts/654fc2ec5972c9e808a121ad
 Content-Type: application/json
 
 {
@@ -123,4 +123,4 @@ Content-Type: application/json
 
 ### Delete contact - remember to change the id
 
-DELETE https://cs341contactsproject.onrender.com/contacts/654fc6f6e2e8cfac42e898b2
+DELETE https://libraryproject-1ccy.onrender.com/contacts/654fc6f6e2e8cfac42e898b2
