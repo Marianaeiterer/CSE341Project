@@ -36,7 +36,7 @@ Content-Type: application/json
 
 ### Delete client
 
-DELETE http://localhost:3000/clients/65579f0d95f57f9da7bc0895 HTTP/1.1
+DELETE http://localhost:3000/clients/655805a1b50a1c23fed0c1ec HTTP/1.1
 
 ###          BOOKS
 
@@ -46,7 +46,7 @@ GET http://localhost:3000/books HTTP/1.1
 
 ### Get one book by id
 
-GET http://localhost:3000/books/6557977e4288072eea016311 HTTP/1.1
+GET http://localhost:3000/books/6557b20d71ca38888c1e8adb HTTP/1.1
 
 ### Create book
 
@@ -65,7 +65,7 @@ Content-Type: application/json
 
 ### Update book
 
-PUT http://localhost:3000/books/6557977e4288072eea016311 HTTP/1.1
+PUT http://localhost:3000/books/6557b20d71ca38888c1e8adb HTTP/1.1
 Content-Type: application/json
 
 {
@@ -80,47 +80,91 @@ Content-Type: application/json
 
 ### Delete book
 
-DELETE http://localhost:3000/books/6557977e4288072eea016315 HTTP/1.1
+DELETE http://localhost:3000/books/655805dcb50a1c23fed0c1ed HTTP/1.1
 
 
 
-// Production - test in render 
+// PRODUCTION - test in render 
 
 ### Get all clients
 
 GET https://libraryproject-1ccy.onrender.com/clients
 
-### Get one contact by id
+### Get one client by id
 
-GET https://libraryproject-1ccy.onrender.com/clients/65578fe54288072eea01630e
+GET https://libraryproject-1ccy.onrender.com/clients/65578fe54288072eea01630b
 
 
-### Create contact
+### Create client
 
-POST https://libraryproject-1ccy.onrender.com/contacts/
+POST https://libraryproject-1ccy.onrender.com/clients/
+Content-Type: application/json
+
+{
+    "firstName": "Zaya",
+    "lastName": "Overbay",
+    "birthday": "09/10/1997",
+    "phone": "234-345-3939",
+    "email": "zaya@gmail.com"
+}
+
+### Update client
+
+PUT https://libraryproject-1ccy.onrender.com/clients/65578fe54288072eea01630a
 Content-Type: application/json
 
 {
     "firstName": "Mariana",
     "lastName": "Overbay",
-    "email": "marioverbay@gmail.com",
-    "favoriteColor": "Blue",
-    "birthday": "05/24/1995"
+    "birthday": "05/24/1995",
+    "phone": "888-909-1111",
+    "email": "mari@gmail.com"
 }
 
-### Update contact
+### Delete client - remember to change the id
 
-PUT https://libraryproject-1ccy.onrender.com/contacts/654fc2ec5972c9e808a121ad
+DELETE https://libraryproject-1ccy.onrender.com/clients/655806736267addfbbd5d461
+
+###          BOOKS
+
+### Get all books
+
+GET https://libraryproject-1ccy.onrender.com/books HTTP/1.1
+
+### Get one book by id
+
+GET https://libraryproject-1ccy.onrender.com/books/6557b20d71ca38888c1e8adb HTTP/1.1
+
+### Create book
+
+POST https://libraryproject-1ccy.onrender.com/books HTTP/1.1
 Content-Type: application/json
 
 {
-    "firstName": "Bruna",
-    "lastName": "Souza",
-    "email": "brunasouza@gmail.com",
-    "favoriteColor": "Pink",
-    "birthday": "07/28/1998"
+    "title": "The Top Five Regrets of the Dying",
+    "author": "Bronnie Ware",
+    "publishedYear": "2011",
+    "numberPages": "320",
+    "language": "English",
+    "genre": "Self-help",
+    "available": "Yes"
 }
 
-### Delete contact - remember to change the id
+### Update book
 
-DELETE https://libraryproject-1ccy.onrender.com/contacts/654fc6f6e2e8cfac42e898b2
+PUT https://libraryproject-1ccy.onrender.com/books/6557b20d71ca38888c1e8adb HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "publishedYear": "1813",
+    "numberPages": "432",
+    "language": "English",
+    "genre": "Romance",
+    "available": "Yes"
+}
+
+### Delete book
+
+DELETE https://libraryproject-1ccy.onrender.com/books/655806d16267addfbbd5d462 HTTP/1.1
