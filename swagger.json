@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "Library API",
-    "description": "Library API \n To login in got to libraryproject-1ccy.onrender.com/login \n to logout go to libraryproject-1ccy.onrender.com/logout ",
+    "description": "Library API \n To login go to: libraryproject-1ccy.onrender.com/login \n To logout go to: libraryproject-1ccy.onrender.com/logout",
     "version": "1.0.0"
   },
   "host": "libraryproject-1ccy.onrender.com",
