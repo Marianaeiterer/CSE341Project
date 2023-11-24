@@ -3,6 +3,7 @@ const router = express.Router();
 
 const bookController = require('../controllers/books');
 const validation = require('../middleware/validate'); 
+const { isAuthenticate } = require('../middleware/authenticate'); 
 
 //get all books
 router.get("/", bookController.getAllBooks);
@@ -11,12 +12,12 @@ router.get("/", bookController.getAllBooks);
 router.get("/:id", bookController.getSingleBook);
 
 //create new book 
-router.post("/", validation.saveBook, bookController.createBook);
+router.post("/", isAuthenticate, bookController.createBook);
 
  //update book
- router.put("/:id", validation.saveBook, bookController.updateBook);
+ router.put("/:id", isAuthenticate, bookController.updateBook);
 
 //delete book
-router.delete("/:id", bookController.deleteBook);
+router.delete("/:id", isAuthenticate, bookController.deleteBook);
 
 module.exports = router;

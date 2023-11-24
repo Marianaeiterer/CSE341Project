@@ -3,6 +3,7 @@ const router = express.Router();
 
 const clientController = require("../controllers/clients");
 const validation = require('../middleware/validate'); 
+const { isAuthenticate } = require('../middleware/authenticate'); 
 
 //get all clients
 
@@ -12,12 +13,12 @@ router.get("/", clientController.getAllClients);
 router.get("/:id", clientController.getSingleClient);
 
 //create new client 
-router.post("/", validation.saveClient, clientController.createClient);
+router.post("/", isAuthenticate, clientController.createClient);
 
 //update client
-router.put("/:id", validation.saveClient, clientController.updateClient);
+router.put("/:id", isAuthenticate, clientController.updateClient);
 
 //delete client
-router.delete("/:id", clientController.deleteClient);
+router.delete("/:id", isAuthenticate, clientController.deleteClient);
 
 module.exports = router;
